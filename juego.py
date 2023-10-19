@@ -14,7 +14,7 @@ class Juego():
 
     def actualizar(self):
         pg.display.flip()
-        self.reloj.tick(30)
+        self.reloj.tick(60)
 
     def dibujar(self):
         self.ventana.fill("black")

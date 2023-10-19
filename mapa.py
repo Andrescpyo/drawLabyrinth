@@ -13,6 +13,13 @@ class Archivo():
             for i in range(len(self.mapa)):
                 if self.mapa[i][-1] == '\n':
                     self.mapa[i].pop()
+            
+            for i in range(len(self.mapa)):
+                for j in range(len(self.mapa[i])):
+                    try:
+                        self.mapa[i][j] = int(self.mapa[i][j])
+                    except ValueError:
+                        pass
 
         return self.mapa
 
@@ -35,8 +42,6 @@ class Mapa():
 
     def draw(self):
         [pg.draw.rect(self.juego.ventana, 'darkgray', (pos[0] * 30, pos[1]* 30,30,30),2) 
-        for pos in self.mapa]
-        [pg.draw.rect(self.juego.ventana, 'blue', (pos[0] * 30, pos[1]* 30,30,30),2) 
         for pos in self.mapa]
 
 if __name__ == "__main__":
