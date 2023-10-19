@@ -9,6 +9,11 @@ class Archivo():
         with open (self.archivo, 'r') as f:
             for linea in f:
                 self.mapa.append(list(linea))
+            
+            for i in range(len(self.mapa)):
+                if self.mapa[i][-1] == '\n':
+                    self.mapa[i].pop()
+
         return self.mapa
 
 a= "C:/Users/Fabian/Documents/GitHub/drawLabyrinth/mapa.txt"
@@ -28,9 +33,11 @@ class Mapa():
                 if valor:
                     self.mapa[(i, j)] = valor
 
-    def dibujar(self):
-        [pg.draw.rect(self.juego.ventana, 'darkgray', (pos[0] * 40, pos[1]* 40,40,40),2) for pos in self.mapa]
-        [pg.draw.rect(self.juego.ventana, 'blue', (pos[0] * 40, pos[1]* 40,40,40),2) for pos in self.mapa]
+    def draw(self):
+        [pg.draw.rect(self.juego.ventana, 'darkgray', (pos[0] * 30, pos[1]* 30,30,30),2) 
+        for pos in self.mapa]
+        [pg.draw.rect(self.juego.ventana, 'blue', (pos[0] * 30, pos[1]* 30,30,30),2) 
+        for pos in self.mapa]
 
 if __name__ == "__main__":
     print(mapa)

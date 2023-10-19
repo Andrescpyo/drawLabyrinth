@@ -10,7 +10,7 @@ class Juego():
         self.nuevo_juego()
 
     def nuevo_juego(self):
-        self.mapa = Mapa(self)
+        self.map = Mapa(self)
 
     def actualizar(self):
         pg.display.flip()
@@ -18,7 +18,7 @@ class Juego():
 
     def dibujar(self):
         self.ventana.fill("black")
-        self.mapa.dibujar()
+        self.map.draw()
 
     def mantener_venatana(self):
         for event in pg.event.get():
