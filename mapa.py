@@ -23,7 +23,7 @@ class Archivo():
 
         return self.mapa
 
-a= "C:/Users/Fabian/Documents/GitHub/drawLabyrinth/mapa.txt"
+a= "/workspaces/drawLabyrinth/mapa.txt"
 c=Archivo(a)
 mapa= c.converitr()
 
