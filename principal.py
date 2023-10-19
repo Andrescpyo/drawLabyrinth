@@ -1,4 +1,3 @@
 from juego import *
 
-juego = Juego()
-juego.jugar()
+Juego().jugar()
